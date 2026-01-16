@@ -13,7 +13,7 @@ export const managementEvents: Event[] = [
   {
     name: 'WarRoom',
     subtitle: 'Best Management Team',
-    logo: '/public/images/warroom.png',
+    logo: '/images/events/warroom.png',
     description: 'A high-pressure strategic collaboration where teams make swift, precise decisions while analyzing scenarios, aligning perspectives, and executing strategies across multidimensional business challenges.',
     teamSize: '3',
     contacts: [
@@ -26,7 +26,7 @@ export const managementEvents: Event[] = [
   {
     name: 'Regent',
     subtitle: 'Best Manager',
-    logo: '/public/images/regent.png',
+    logo: '/images/events/regent.png',
     description: 'Regent recognizes leaders who command authority while demonstrating insight and adaptability, highlighting their ability to guide teams, make informed decisions, and lead through complex business realities.',
     teamSize: '1',
     contacts: [
@@ -39,7 +39,7 @@ export const managementEvents: Event[] = [
   {
     name: 'Parallax',
     subtitle: 'Marketing',
-    logo: '/public/images/parallax.png',
+    logo: '/images/events/parallax.png',
     description: 'Examines how a single brand is perceived differently across markets and touchpoints, focusing on strategy, positioning, and adaptation across segments, channels, and contexts.',
     teamSize: '2',
     contacts: [
@@ -52,7 +52,7 @@ export const managementEvents: Event[] = [
   {
     name: 'Equinox',
     subtitle: 'Finance',
-    logo: '/public/images/equinox.png',
+    logo: '/images/events/equinox.png',
     description: 'Equinox represents the balance between risk and return in a shifting financial landscape, where participants navigate parallel outcomes and make strategic decisions testing judgment, foresight, and strength.',
     teamSize: '2',
     contacts: [
@@ -65,7 +65,7 @@ export const managementEvents: Event[] = [
   {
     name: 'Keystone',
     subtitle: 'Human Resources',
-    logo: '/public/images/keystone.png',
+    logo: '/images/events/keystone.png',
     description: 'Keystone symbolizes the core holding an organization together across dimensions, focusing on leadership alignment, cultural strength, and people systems that sustain performance and continuity in evolving environments.',
     teamSize: '2',
     contacts: [
@@ -78,7 +78,7 @@ export const managementEvents: Event[] = [
   {
     name: 'Credence',
     subtitle: 'Public Relations',
-    logo: '/public/images/credence.png',
+    logo: '/images/events/credence.png',
     description: 'Credence centers on building and sustaining trust within complex stakeholder ecosystems, challenging participants to manage reputation, shape perception, and communicate credibility across diverse, dynamic environments.',
     teamSize: '2',
     contacts: [
@@ -91,7 +91,7 @@ export const managementEvents: Event[] = [
   {
     name: 'Crossfire',
     subtitle: 'Business Quiz',
-    logo: '/public/images/crossfire.png',
+    logo: '/images/events/crossfire.png',
     description: 'Crossfire is a fast-paced test of business knowledge and mental agility, evaluating how quickly participants respond accurately to dynamic situations requiring sharp situational awareness.',
     teamSize: '2',
     contacts: [
@@ -107,7 +107,7 @@ export const culturalEvents: Event[] = [
   {
     name: 'BeatVerse',
     subtitle: 'Group Dance',
-    logo: '/public/images/beatverse.png',
+    logo: '/images/events/beatverse.png',
     description: 'Group Dance celebrates unity and rhythm through Bollywood, as teams bring stories to life with synchronized choreography and dynamic formations, showcasing teamwork, cultural flair, and stage presence with artistic integrity.',
     teamSize: '6-8',
     contacts: [
@@ -121,7 +121,7 @@ export const culturalEvents: Event[] = [
   {
     name: 'The Consortium',
     subtitle: 'Corporate Walk',
-    logo: '/public/images/the-consortium.png',
+    logo: '/images/events/the-consortium.png',
     description: 'A supreme intergalactic boardroom of visionary executives in their signature corporate look, blending Indian-fusion elegance with futuristic power.',
     teamSize: '6-8',
     contacts: [
@@ -135,7 +135,7 @@ export const culturalEvents: Event[] = [
   {
     name: 'Aperture & Soul',
     subtitle: 'Photography',
-    logo: '/public/images/aperture-and-soul.png',
+    logo: '/images/events/aperture-and-soul.png',
     description: 'Beyond the shutter lies a story. The event challenges photographers to express a central theme through their creative vision, judged on technical quality, narrative strength, and thematic relevance.',
     teamSize: '1',
     contacts: [
@@ -149,7 +149,7 @@ export const culturalEvents: Event[] = [
   {
     name: 'Frame Shift',
     subtitle: 'Reel Making',
-    logo: '/public/images/frame-shift.png',
+    logo: '/images/events/frame-shift.png',
     description: 'Explore the multiverse through visual storytelling, blending imagination, transitions, and narrative depth into short-form videos.',
     teamSize: '2',
     contacts: [
