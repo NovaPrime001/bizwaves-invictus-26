@@ -1,4 +1,4 @@
-
+import { supabase } from '../lib/supabase';
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { RegistrationData, Team, Participant, Event } from '../types';
 import { managementEvents, culturalEvents, mockRegistrations } from '../constants';
@@ -253,35 +253,42 @@ const RegistrationForm: React.FC = () => {
     };
     
     const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+        e.preventDefault();
+        if(!formData.paymentScreenshot) {
+            alert("Please upload the payment screenshot to confirm your registration.");
+            return;
+        }
+        const finalData: RegistrationData = {
+            ...formData,
+            id: uuidv4(),
+            totalParticipants: formData.teams.reduce((acc, team) => acc + team.participants.length, 0),
+            paymentStatus: 'Pending',
+        };
+        
+    const { data, error } = await supabase
+    .from("registrations")
+    .insert([
+        {
+        spoc_name: finalData.spocName,
+        institute: finalData.institute,
+        email: finalData.email,
+        phone: finalData.phone,
+        program: finalData.program,
+        course: finalData.course,
+        total_participants: finalData.totalParticipants,
+        payment_status: "Pending"
+        }
+    ])
+    .select();
 
-    console.log('Submit clicked');
-    console.log('Form data:', formData);
-
-    try {
-        const { data, error } = await supabase
-        .from('registrations')
-        .insert({
-            spoc_name: formData.spocName,
-            institute: formData.institute,
-            email: formData.email,
-            phone: formData.phone,
-            program: formData.program,
-            course: formData.course,
-            total_participants: formData.totalParticipants,
-            payment_status: 'Pending',
-        })
-        .select()
-        .single();
-
-        console.log('Supabase response:', data);
-        console.log('Supabase error:', error);
-
-        if (error) throw error;
-
-    } catch (err) {
-        console.error('Insert failed:', err);
+    if (error) {
+    console.error("Supabase insert error:", error);
+    alert("Registration failed: " + error.message);
+    return;
     }
+
+    console.log("Inserted:", data);
+    setIsSubmitted(true);
     };
 
     if (isSubmitted) {
