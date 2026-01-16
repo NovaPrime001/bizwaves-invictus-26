@@ -3,7 +3,7 @@ import React from 'react';
 import Countdown from './Countdown';
 
 const Hero: React.FC = () => {
-  const posterImageUrl = '/assets/images/hero-background.jpg';
+  const posterImageUrl = '/public/images/hero-background.jpg';
   const festDate = new Date('2026-02-09T09:00:00');
 
   return (
