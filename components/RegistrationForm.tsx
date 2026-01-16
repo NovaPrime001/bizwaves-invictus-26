@@ -252,24 +252,36 @@ const RegistrationForm: React.FC = () => {
         }
     };
     
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if(!formData.paymentScreenshot) {
-            alert("Please upload the payment screenshot to confirm your registration.");
-            return;
-        }
-        const finalData: RegistrationData = {
-            ...formData,
-            id: uuidv4(),
-            totalParticipants: formData.teams.reduce((acc, team) => acc + team.participants.length, 0),
-            paymentStatus: 'Pending',
-        };
-        
-        const storedRegistrations = localStorage.getItem('allRegistrations');
-        const allRegistrations = storedRegistrations ? JSON.parse(storedRegistrations) : mockRegistrations;
-        allRegistrations.push(finalData);
-        localStorage.setItem('allRegistrations', JSON.stringify(allRegistrations));
-        setIsSubmitted(true);
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    console.log('Submit clicked');
+    console.log('Form data:', formData);
+
+    try {
+        const { data, error } = await supabase
+        .from('registrations')
+        .insert({
+            spoc_name: formData.spocName,
+            institute: formData.institute,
+            email: formData.email,
+            phone: formData.phone,
+            program: formData.program,
+            course: formData.course,
+            total_participants: formData.totalParticipants,
+            payment_status: 'Pending',
+        })
+        .select()
+        .single();
+
+        console.log('Supabase response:', data);
+        console.log('Supabase error:', error);
+
+        if (error) throw error;
+
+    } catch (err) {
+        console.error('Insert failed:', err);
+    }
     };
 
     if (isSubmitted) {
